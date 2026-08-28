@@ -4,13 +4,13 @@ let level = parseInt(localStorage.getItem("astro_level")) || 0;
 let xp = parseInt(localStorage.getItem("astro_xp")) || 0;
 
 const pfpMilestones = {
-    0: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/Vintage_Astro.webp",
-    1: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/Astro.webp",
-    25: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/North_Star.webp",
-    100: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/Bedtime_Bear.webp",
-    250: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/Star-Time_Astro.webp",
-    500: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/Starry_Night.webp",
-    1000: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/Scarlet_Night.webp"
+    0: "https://img.magnific.com/premium-vector/cartoon-computer-character-with-keyboard-mouse_1240970-37507.jpg?semt=ais_hybrid&w=740&q=80",
+    1: "https://img.magnific.com/premium-vector/cartoon-computer-character-with-keyboard-mouse_1240970-37507.jpg?semt=ais_hybrid&w=740&q=80",
+    25: "https://img.magnific.com/premium-vector/cartoon-computer-character-with-keyboard-mouse_1240970-37507.jpg?semt=ais_hybrid&w=740&q=80",
+    100: "https://img.magnific.com/premium-vector/cartoon-computer-character-with-keyboard-mouse_1240970-37507.jpg?semt=ais_hybrid&w=740&q=80",
+    250: "https://img.magnific.com/premium-vector/cartoon-computer-character-with-keyboard-mouse_1240970-37507.jpg?semt=ais_hybrid&w=740&q=80",
+    500: "https://img.magnific.com/premium-vector/cartoon-computer-character-with-keyboard-mouse_1240970-37507.jpg?semt=ais_hybrid&w=740&q=80",
+    1000: "https://img.magnific.com/premium-vector/cartoon-computer-character-with-keyboard-mouse_1240970-37507.jpg?semt=ais_hybrid&w=740&q=80"
 };
 
 function xpNeeded(lvl){
