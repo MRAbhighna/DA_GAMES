@@ -4,8 +4,99 @@
     <body xmlns="http://www.w3.org/1999/xhtml">
     <meta content='width=device-width, initial-scale=1.0' name='viewport'></meta>
 	 <iframe style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" id="test"></iframe>
-         <script>let l = atob("PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CiAgICA8bWV0YSBjaGFyc2V0PSJ1dGYtOCIgLz4KICAgIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsaW5pdGlhbC1zY2FsZT0xIiAvPgoKICAgIDx0aXRsZT5NYWRlIEJ5IEEgTm9uIFN1c3BpY2lvdXMgUGVyc29uITwvdGl0bGU+CiAgICA8bGluayBpZD0ic2l0ZS1mYXZpY29uIiByZWw9Imljb24iIHR5cGU9ImltYWdlL3BuZyIgaHJlZj0iaHR0cHM6Ly9pbWcubWFnbmlmaWMuY29tL3ByZW1pdW0tdmVjdG9yL2NhcnRvb24tY29tcHV0ZXItY2hhcmFjdGVyLXdpdGgta2V5Ym9hcmQtbW91c2VfMTI0MDk3MC0zNzUwNy5qcGc/c2VtdD1haXNfaHlicmlkJnc9NzQwJnE9ODAiPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvZ2gvTVJBYmhpZ2huYS9EQV9HQU1FUy9zdHlsZS5jc3MiPgoKPC9oZWFkPgo8Ym9keT4KCjxkaXYgY2xhc3M9InNpZGViYXIiIGlkPSJzaWRlYmFyIj48L2Rpdj4KCjxkaXYgY2xhc3M9InNlYXJjaC1zaWRlYmFyIj4KICAgIDxpbnB1dCBjbGFzcz0ic2VhcmNoLWlucHV0IiBpZD0ic2VhcmNoQm94IiBwbGFjZWhvbGRlcj0iU2VhcmNoLi4uIj4KCiAgICA8ZGl2IGNsYXNzPSJzZWFyY2gtcmVzdWx0cyIgaWQ9InNlYXJjaFJlc3VsdHMiPjwvZGl2Pgo8L2Rpdj4KCgogICAgPGRpdiBjbGFzcz0ibWFpbi1jb250ZW50Ij4KICAgICAgICA8aGVhZGVyPgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJsb2dvIj48aW1nIHNyYz0iaHR0cHM6Ly9pbWcubWFnbmlmaWMuY29tL3ByZW1pdW0tdmVjdG9yL2NhcnRvb24tY29tcHV0ZXItY2hhcmFjdGVyLXdpdGgta2V5Ym9hcmQtbW91c2VfMTI0MDk3MC0zNzUwNy5qcGc/c2VtdD1haXNfaHlicmlkJnc9NzQwJnE9ODAiIGFsdD0iRW5pZ21hIGxvZ28iPjwvZGl2PgogICAgICAgICAgICA8ZGl2PgogICAgICAgICAgICAgICAgPGgxPkRlZmluZXRseSBBICJTY2hvb2wgQXBwcm9waXRlIiBXZWJzaXRlPC9oMT4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9InN1YiI+QWN0dWFsbHkgTWFkZSBCeSBBYmhpZ2huYSA6RDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGJ1dHRvbiBjbGFzcz0ic2V0dGluZ3MtZ2VhciIgb25jbGljaz0iZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3NldHRpbmdzT3ZlcmxheScpLmNsYXNzTGlzdC5hZGQoJ29wZW4nKSIgdGl0bGU9IlNldHRpbmdzIj7impnvuI88L2J1dHRvbj4KICAgICAgICA8L2hlYWRlcj4KCjxkaXYgY2xhc3M9InhwLWNvbnRhaW5lciI+CiAgICA8aW1nIGlkPSJsZXZlbFBmcCIgY2xhc3M9InhwLXBmcCIgc3JjPSIiIC8+CiAgICA8ZGl2IGNsYXNzPSJ4cC1iYXItd3JhcHBlciI+CiAgICAgICAgPGRpdiBjbGFzcz0ieHAtaW5mbyI+CiAgICAgICAgICAgIDxzcGFuIGlkPSJsZXZlbFRleHQiPkxldmVsIDA8L3NwYW4+CiAgICAgICAgICAgIDxzcGFuIGlkPSJ4cFRleHQiPjAgLyAxMDAgWFA8L3NwYW4+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0ieHAtYmFyIj4KICAgICAgICAgICAgPGRpdiBpZD0ieHBGaWxsIiBjbGFzcz0ieHAtZmlsbCI+PC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KPC9kaXY+CgoKICAgICAgICA8ZGl2IGNsYXNzPSJzZWN0aW9uLXdyYXAiPgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJwaW5uZWQtc2VjdGlvbiI+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJwaW5uZWQtaGVhZGVyIj7wn5OMIFBpbm5lZDwvZGl2PgogICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0icGlubmVkLWdhbWVzIiBpZD0icGlubmVkR2FtZXMiPgogICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJwaW5uZWQtZW1wdHkiPk5vdGhpbmcgcGlubmVkIHlldCDigJQgcGluIHVwIHRvIDMgZmF2b3JpdGVzITwvc3Bhbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPGRpdiBjbGFzcz0ic2VjdGlvbi13cmFwIj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0icmVjZW50LXNlY3Rpb24iPgogICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0icmVjZW50LWhlYWRlciI+8J+Vue+4jyBSZWNlbnRseSBQbGF5ZWQ8L2Rpdj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9InJlY2VudC1nYW1lcyIgaWQ9InJlY2VudEdhbWVzIj4KICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0icmVjZW50LWVtcHR5Ij5ObyBnYW1lcyBwbGF5ZWQgeWV0IOKAlCBsYXVuY2ggb25lIHRvIGdldCBzdGFydGVkITwvc3Bhbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KCiAgICAgICAgPGRpdiBjbGFzcz0ic2VjdGlvbi13cmFwIiBpZD0ic2VjdGlvbnMtY29udGFpbmVyIj48L2Rpdj4KICAgIDwvZGl2PgoKPHNjcmlwdCBzcmM9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9naC9NUkFiaGlnaG5hL0RBX0dBTUVTL3NjcmlwdDEuanMiPjwvc2NyaXB0Pgo8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL01SQWJoaWdobmEvREFfR0FNRVMvc2NyaXB0Mi5qcyI+PC9zY3JpcHQ+CjxzY3JpcHQgc3JjPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvZ2gvTVJBYmhpZ2huYS9EQV9HQU1FUy9zY3JpcHQ0LmpzIj48L3NjcmlwdD4KPHNjcmlwdCBzcmM9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9naC9NUkFiaGlnaG5hL0RBX0dBTUVTL3NjcmlwdDMuanMiPjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw"); var theIframe = document.getElementById('test'); theIframe.srcdoc = l;</script>
-    </body>
+		<body>
+		
+		<button type="button" onclick="openPage();">Click Me!</button>
+		
+		<template id="games">
+			<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Made By A Non Suspicious Person!</title>
+    <link id="site-favicon" rel="icon" type="image/png" href="https://img.magnific.com/premium-vector/cartoon-computer-character-with-keyboard-mouse_1240970-37507.jpg?semt=ais_hybrid&w=740&q=80">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MRAbhighna/DA_GAMES/style.css">
+
+</head>
+<body>
+
+<div class="sidebar" id="sidebar"></div>
+
+<div class="search-sidebar">
+    <input class="search-input" id="searchBox" placeholder="Search...">
+
+    <div class="search-results" id="searchResults"></div>
+</div>
+
+
+    <div class="main-content">
+        <header>
+            <div class="logo"><img src="https://img.magnific.com/premium-vector/cartoon-computer-character-with-keyboard-mouse_1240970-37507.jpg?semt=ais_hybrid&w=740&q=80" alt="Enigma logo"></div>
+            <div>
+                <h1>Definetly A "School Appropite" Website</h1>
+                <div class="sub">Actually Made By Abhighna :D</div>
+            </div>
+            <button class="settings-gear" onclick="document.getElementById('settingsOverlay').classList.add('open')" title="Settings">⚙️</button>
+        </header>
+
+<div class="xp-container">
+    <img id="levelPfp" class="xp-pfp" src="" />
+    <div class="xp-bar-wrapper">
+        <div class="xp-info">
+            <span id="levelText">Level 0</span>
+            <span id="xpText">0 / 100 XP</span>
+        </div>
+        <div class="xp-bar">
+            <div id="xpFill" class="xp-fill"></div>
+        </div>
+    </div>
+</div>
+
+
+        <div class="section-wrap">
+            <div class="pinned-section">
+                <div class="pinned-header">📌 Pinned</div>
+                <div class="pinned-games" id="pinnedGames">
+                    <span class="pinned-empty">Nothing pinned yet — pin up to 3 favorites!</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-wrap">
+            <div class="recent-section">
+                <div class="recent-header">🕹️ Recently Played</div>
+                <div class="recent-games" id="recentGames">
+                    <span class="recent-empty">No games played yet — launch one to get started!</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-wrap" id="sections-container"></div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/gh/MRAbhighna/DA_GAMES/script1.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MRAbhighna/DA_GAMES/script2.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MRAbhighna/DA_GAMES/script4.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MRAbhighna/DA_GAMES/script3.js"></script>
+
+</body>
+</html>
+		</template>
+		
+		<script>
+			function openPage() {
+				const content = document.getElementById("games");
+				const newWindow = window.open();
+				
+				newWindow.document.open();
+				newWindow.document.write(content.innerHTML);
+				newWindow.document.close();
+			}
+		</script>
+		
+		</body>
   </foreignObject>
       <script><![CDATA[...]]></script>
 </svg>
