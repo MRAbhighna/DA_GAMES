@@ -1,4 +1,3 @@
-
 function getPinnedGames(){
     try{ return JSON.parse(localStorage.getItem("astro_pinned") || "[]"); }
     catch(e){ return []; }
