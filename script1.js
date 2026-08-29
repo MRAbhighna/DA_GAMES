@@ -564,6 +564,7 @@ let files = [
 "cldkccompetitioncart",
 "clDKNESCollection(1)",
 "clDKNESCollection",
+"clDigOutofPrison",
 "cldoblox",
 "cldogeminer",
 "cldogeminer2",
@@ -715,6 +716,7 @@ let files = [
 "clfallout",
 "clfamidash",
 "clfamidash128",
+"clfamidash2alpha",
 "clfamidashAlbum128",
 "clfamidashBSides128",
 "clfamidashCSides128",
@@ -792,6 +794,7 @@ let files = [
 "clfivenightsatyoshis",
 "clflappybird",
 "clflashsonic",
+"clFleurdeLis",
 "clfloodrunner",
 "clfloodrunner2",
 "clfloodrunner4",
@@ -2930,8 +2933,30 @@ let files = [
 "supremeduelistfix",
 "thiefpuzzle",
 "unpkg",
-"cl?"
+"cl?",
+"clcatmario",
+"clCeliasStupidROMHack",
+"clDigOutofPrison",
+"cldokidokiliteratureclub",
+"cldrivemad",
+"clfamidash2alpha",
+"clFleurdeLis",
+"clgranny3",
+"clgrowdenio",
+"clhalloween2600",
+"cllegoracers",
+"clpaperio3d",
+"clpokeaestheticred",
+"clpokecrystaladvanceredux",
+"clpokecrystallegacy",
+"clpokeemeraldextendedcut",
+"clpokeemeraldlegacy",
+"clpokeyellowlegacy",
+"clsausageflip",
+"clswitch",
+"clwariowaretouched"
 ];
+
         function generateAllSections() {
             const allChars = ['0','1','2','3','4','5','6','7','8','9',
                             'A','B','C','D','E','F','G','H','I','J','K','L','M',
@@ -3211,40 +3236,3 @@ searchBox.addEventListener('input', () => {
         document.body.removeChild(a);
         URL.revokeObjectURL(a.href);
     }
-document.addEventListener('DOMContentLoaded', () => {
-        const searchBox = document.getElementById('searchBox');
-        const searchResults = document.getElementById('searchResults');
-
-        if (!searchBox || !searchResults) return;
-
-        searchBox.addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase().trim();
-            
-            // Clear results if input is empty
-            if (query === '') {
-                searchResults.innerHTML = '';
-                searchResults.style.display = 'none';
-                return;
-            }
-
-            // Filter your 'files' array (adjust property names if your data uses something other than .title or .url)
-            const matches = typeof files !== 'undefined' ? files.filter(item => {
-                // Checks if the title or name contains what you typed
-                const name = item.title || item.name || '';
-                return name.toLowerCase().includes(query);
-            }) : [];
-
-            // Render the results
-            if (matches.length === 0) {
-                searchResults.innerHTML = '<div style="padding: 8px; color: #888;">No results found</div>';
-            } else {
-                searchResults.innerHTML = matches.map(item => `
-                    <a href="${item.url || item.link || '#'}" style="display: block; padding: 8px; text-decoration: none; color: inherit;">
-                        ${item.title || item.name}
-                    </a>
-                `).join('');
-            }
-            
-            searchResults.style.display = 'block';
-        });
-    });
