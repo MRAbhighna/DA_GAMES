@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="position: fixed; top: 0; left: 0;">
+<style>[...]</style>
+  <foreignObject x="0" y="0" width="100%" height="100%">
+    <body xmlns="http://www.w3.org/1999/xhtml">
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'></meta>
+	 <iframe style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" id="test"></iframe>
+		<body>
+		
+		<button type="button" onclick="openPage();">Click Me!</button>
+		
+		<template id="games">
+			<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Made By A Non Suspicious Person!</title>
+    <link id="site-favicon" rel="icon" type="image/png" href="https://img.magnific.com/premium-vector/cartoon-computer-character-with-keyboard-mouse_1240970-37507.jpg?semt=ais_hybrid&w=740&q=80">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MRAbhighna/DA_GAMES/style.css">
+
+</head>
+<body>
+
+<div class="sidebar" id="sidebar"></div>
+
+<div class="search-sidebar">
+    <input class="search-input" id="searchBox" placeholder="Search...">
+
+    <div class="search-results" id="searchResults"></div>
+</div>
+
+
+    <div class="main-content">
+        <header>
+            <div class="logo"><img src="https://img.magnific.com/premium-vector/cartoon-computer-character-with-keyboard-mouse_1240970-37507.jpg?semt=ais_hybrid&w=740&q=80" alt="Enigma logo"></div>
+            <div>
+                <h1>Definetly A "School Appropite" Website</h1>
+                <div class="sub">Actually Made By Abhighna :D</div>
+            </div>
+            <button class="settings-gear" onclick="document.getElementById('settingsOverlay').classList.add('open')" title="Settings">⚙️</button>
+        </header>
+
+<div class="xp-container">
+    <img id="levelPfp" class="xp-pfp" src="" />
+    <div class="xp-bar-wrapper">
+        <div class="xp-info">
+            <span id="levelText">Level 0</span>
+            <span id="xpText">0 / 100 XP</span>
+        </div>
+        <div class="xp-bar">
+            <div id="xpFill" class="xp-fill"></div>
+        </div>
+    </div>
+</div>
+
+
+        <div class="section-wrap">
+            <div class="pinned-section">
+                <div class="pinned-header">📌 Pinned</div>
+                <div class="pinned-games" id="pinnedGames">
+                    <span class="pinned-empty">Nothing pinned yet — pin up to 3 favorites!</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-wrap">
+            <div class="recent-section">
+                <div class="recent-header">🕹️ Recently Played</div>
+                <div class="recent-games" id="recentGames">
+                    <span class="recent-empty">No games played yet — launch one to get started!</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-wrap" id="sections-container"></div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/gh/MRAbhighna/DA_GAMES/script1.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MRAbhighna/DA_GAMES/script2.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MRAbhighna/DA_GAMES/script4.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MRAbhighna/DA_GAMES/script3.js"></script>
+</html>
+		</template>
+		
+		<script>
+			function openPage() {
+				const content = document.getElementById("games");
+				const newWindow = window.open();
+				
+				newWindow.document.open();
+				newWindow.document.write(content.innerHTML);
+				newWindow.document.close();
+			}
+		</script>
+		
+		</body>
+  </foreignObject>
+      <script><![CDATA[...]]></script>
+</svg>
