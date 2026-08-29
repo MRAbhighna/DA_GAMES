@@ -3211,3 +3211,40 @@ searchBox.addEventListener('input', () => {
         document.body.removeChild(a);
         URL.revokeObjectURL(a.href);
     }
+document.addEventListener('DOMContentLoaded', () => {
+        const searchBox = document.getElementById('searchBox');
+        const searchResults = document.getElementById('searchResults');
+
+        if (!searchBox || !searchResults) return;
+
+        searchBox.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            
+            // Clear results if input is empty
+            if (query === '') {
+                searchResults.innerHTML = '';
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            // Filter your 'files' array (adjust property names if your data uses something other than .title or .url)
+            const matches = typeof files !== 'undefined' ? files.filter(item => {
+                // Checks if the title or name contains what you typed
+                const name = item.title || item.name || '';
+                return name.toLowerCase().includes(query);
+            }) : [];
+
+            // Render the results
+            if (matches.length === 0) {
+                searchResults.innerHTML = '<div style="padding: 8px; color: #888;">No results found</div>';
+            } else {
+                searchResults.innerHTML = matches.map(item => `
+                    <a href="${item.url || item.link || '#'}" style="display: block; padding: 8px; text-decoration: none; color: inherit;">
+                        ${item.title || item.name}
+                    </a>
+                `).join('');
+            }
+            
+            searchResults.style.display = 'block';
+        });
+    });
