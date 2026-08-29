@@ -1,123 +1,76 @@
-function getPinnedGames(){
-    try{ return JSON.parse(localStorage.getItem("astro_pinned") || "[]"); }
-    catch(e){ return []; }
+/* ================= XP SYSTEM ================= */
+
+let level = parseInt(localStorage.getItem("astro_level")) || 0;
+let xp = parseInt(localStorage.getItem("astro_xp")) || 0;
+
+const pfpMilestones = {
+    0: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/Vintage_Astro.webp",
+    1: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/Astro.webp",
+    25: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/North_Star.webp",
+    100: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/Bedtime_Bear.webp",
+    250: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/Star-Time_Astro.webp",
+    500: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/Starry_Night.webp",
+    1000: "https://cdn.jsdelivr.net/gh/Joeclickavit/astrosilly@main/Scarlet_Night.webp"
+};
+
+function xpNeeded(lvl){
+    return Math.floor(100 * Math.pow(1.001, lvl));
 }
 
-function togglePin(file){
-    let pinned = getPinnedGames();
-    if(pinned.includes(file)){
-        pinned = pinned.filter(f => f !== file);
+function xpPerGame(){
+    return 25 + Math.floor(level / 10) * 5;
+}
+
+function updateUI(){
+    const needed = xpNeeded(level);
+    document.getElementById("levelText").innerText = "Level " + level;
+    document.getElementById("xpText").innerText = xp + " / " + needed + " XP  (" + xpPerGame() + " XP/game)";
+    document.getElementById("xpFill").style.width = (xp / needed * 100) + "%";
+
+    // Only auto-set pfp if user hasn't manually chosen one
+    const chosenPfp = localStorage.getItem("astro_chosen_pfp");
+    if(!chosenPfp){
+        let currentPfp = pfpMilestones[0];
+        Object.keys(pfpMilestones).forEach(m => {
+            if(level >= parseInt(m)){
+                currentPfp = pfpMilestones[m];
+            }
+        });
+        document.getElementById("levelPfp").src = currentPfp;
     } else {
-        if(pinned.length >= 3){
-            alert("You can only pin up to 3 games! Unpin one first.");
-            return;
-        }
-        pinned.push(file);
+        document.getElementById("levelPfp").src = chosenPfp;
     }
-    localStorage.setItem("astro_pinned", JSON.stringify(pinned));
-    renderPinnedGames();
-    refreshAllPinButtons();
 }
 
-function refreshAllPinButtons(){
-    const pinned = getPinnedGames();
-    document.querySelectorAll('.pin-btn[data-file]').forEach(btn => {
-        const f = btn.dataset.file;
-        if(pinned.includes(f)){
-            btn.classList.add('pinned');
-            btn.title = 'Unpin game';
-        } else {
-            btn.classList.remove('pinned');
-            btn.title = 'Pin game';
-        }
-    });
-}
-
-function renderPinnedGames(){
-    const container = document.getElementById("pinnedGames");
-    if(!container) return;
-    const pinned = getPinnedGames();
-    if(pinned.length === 0){
-        container.innerHTML = '<span class="pinned-empty">No games pinned yet — pin up to 3 favorites!</span>';
-        return;
+function addXP(amount){
+    xp += amount;
+    while(xp >= xpNeeded(level)){
+        xp -= xpNeeded(level);
+        level++;
     }
-    container.innerHTML = '';
-    pinned.forEach(file => {
-        const card = document.createElement('div');
-        card.className = 'pinned-card';
+    localStorage.setItem("astro_level", level);
+    localStorage.setItem("astro_xp", xp);
+    updateUI();
+}
 
-        const label = document.createElement('span');
-        label.textContent = '📌 ' + file.replace(/^cl/i,'');
-        label.style.flex = '1';
-        label.style.cursor = 'pointer';
-        label.onclick = () => {
-            recordRecentGame(file);
-            const normalized = file.endsWith('.html') ? file : file + '.html';
-            fetch(`https://cdn.jsdelivr.net/gh/bubbls/ugs-singlefile/UGS-Files/${encodeURIComponent(normalized)}?t=${Date.now()}`)
-                .then(r => r.text())
-                .then(t => {
-                    const w = window.open('about:blank','_blank');
-                    if(w){ w.document.open(); w.document.write(t); w.document.close(); }
-                });
+document.addEventListener("DOMContentLoaded", () => {
+    updateUI();
+
+    if(level >= 1100){
+        document.getElementById("levelPfp").onclick = () => {
+            const unlocked = Object.keys(pfpMilestones)
+                .filter(m => level >= parseInt(m))
+                .map(m => pfpMilestones[m]);
+
+            const choice = prompt("Choose avatar number:\n" + 
+                unlocked.map((_,i)=> i + ": Avatar").join("\n")
+            );
+
+            if(unlocked[choice]){
+                const chosen = unlocked[choice];
+                localStorage.setItem("astro_chosen_pfp", chosen);
+                document.getElementById("levelPfp").src = chosen;
+            }
         };
-
-        const unpinBtn = document.createElement('button');
-        unpinBtn.className = 'unpin-btn';
-        unpinBtn.textContent = '✕';
-        unpinBtn.title = 'Unpin';
-        unpinBtn.onclick = (e) => {
-            e.stopPropagation();
-            togglePin(file);
-        };
-
-        card.appendChild(label);
-        card.appendChild(unpinBtn);
-        container.appendChild(card);
-    });
-}
-
-document.addEventListener("DOMContentLoaded", renderPinnedGames);
-
-/* ================= RECENTLY PLAYED ================= */
-function getRecentGames(){
-    try{ return JSON.parse(localStorage.getItem("astro_recent") || "[]"); }
-    catch(e){ return []; }
-}
-
-function recordRecentGame(file){
-    let recent = getRecentGames();
-    recent = recent.filter(f => f !== file);
-    recent.unshift(file);
-    recent = recent.slice(0, 5);
-    localStorage.setItem("astro_recent", JSON.stringify(recent));
-    renderRecentGames();
-}
-
-function renderRecentGames(){
-    const container = document.getElementById("recentGames");
-    if(!container) return;
-    const recent = getRecentGames();
-    if(recent.length === 0){
-        container.innerHTML = '<span class="recent-empty">No games played yet — launch one to get started!</span>';
-        return;
     }
-    container.innerHTML = '';
-    recent.forEach(file => {
-        const card = document.createElement('div');
-        card.className = 'recent-card';
-        card.textContent = '▶ ' + file.replace(/^cl/i,'');
-        card.onclick = () => {
-            recordRecentGame(file);
-            const normalized = file.endsWith('.html') ? file : file + '.html';
-            fetch(`https://cdn.jsdelivr.net/gh/bubbls/ugs-singlefile/UGS-Files/${encodeURIComponent(normalized)}?t=${Date.now()}`)
-                .then(r => r.text())
-                .then(t => {
-                    const w = window.open('about:blank','_blank');
-                    if(w){ w.document.open(); w.document.write(t); w.document.close(); }
-                });
-        };
-        container.appendChild(card);
-    });
-}
-
-document.addEventListener("DOMContentLoaded", renderRecentGames);
+});
