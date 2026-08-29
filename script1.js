@@ -1,4 +1,4 @@
-let files = [
+const files = [
   "cl1",
 "cl100RoomsOfEnemies",
 "cl10bullets",
